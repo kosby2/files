@@ -1,0 +1,44 @@
+{
+  "Miami": {
+    "total_simulations": 1000,
+    "expected_profit": 785.0,
+    "profit_std_dev": 0.0,
+    "service_reliability": {
+      "S001": 1.0,
+      "S002": 1.0,
+      "S003": 1.0,
+      "S004": 1.0,
+      "S010": 1.0
+    },
+    "vehicle_failure_frequency": {
+      "V001": 46,
+      "V002": 61,
+      "V003": 20,
+      "V004": 108,
+      "V005": 48
+    },
+    "critical_stops": []
+  },
+  "Tampa": {
+    "total_simulations": 1000,
+    "expected_profit": 1245.0,
+    "profit_std_dev": 0.0,
+    "service_reliability": {
+      "T001": 1.0,
+      "T002": 1.0,
+      "T003": 1.0,
+      "T004": 1.0,
+      "T005": 1.0,
+      "T006": 1.0,
+      "T007": 1.0,
+      "T008": 1.0
+    },
+    "vehicle_failure_frequency": {
+      "V101": 23,
+      "V102": 33,
+      "V103": 70,
+      "V104": 114
+    },
+    "critical_stops": []
+  }
+}

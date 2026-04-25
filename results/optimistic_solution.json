@@ -1,0 +1,120 @@
+{
+  "Miami": {
+    "routes": [
+      {
+        "vehicle_id": "V001",
+        "stops": [
+          {
+            "stop_id": "S004",
+            "address": "321 Elm St, Miami",
+            "profit": 220.0,
+            "service_time": 25
+          },
+          {
+            "stop_id": "S002",
+            "address": "456 Oak Ave, Miami",
+            "profit": 200.0,
+            "service_time": 20
+          },
+          {
+            "stop_id": "S010",
+            "address": "444 Spruce Ct, Miami",
+            "profit": 185.0,
+            "service_time": 19
+          },
+          {
+            "stop_id": "S001",
+            "address": "123 Main St, Miami",
+            "profit": 150.0,
+            "service_time": 15
+          },
+          {
+            "stop_id": "S003",
+            "address": "789 Pine Rd, Miami",
+            "profit": 180.0,
+            "service_time": 12
+          }
+        ],
+        "total_profit": 935.0,
+        "daily_cost": 150.0,
+        "net_profit": 785.0
+      }
+    ],
+    "summary": {
+      "total_routes": 1,
+      "total_profit": 935.0,
+      "total_cost": 150.0,
+      "net_profit": 785.0,
+      "stops_serviced": 5,
+      "stops_missed": 0
+    }
+  },
+  "Tampa": {
+    "routes": [
+      {
+        "vehicle_id": "V002",
+        "stops": [
+          {
+            "stop_id": "T001",
+            "address": "100 Bay St, Tampa",
+            "profit": 140.0,
+            "service_time": 15
+          },
+          {
+            "stop_id": "T008",
+            "address": "800 Terminal, Tampa",
+            "profit": 175.0,
+            "service_time": 17
+          },
+          {
+            "stop_id": "T002",
+            "address": "200 Park Ave, Tampa",
+            "profit": 190.0,
+            "service_time": 18
+          },
+          {
+            "stop_id": "T004",
+            "address": "400 Downtown, Tampa",
+            "profit": 210.0,
+            "service_time": 22
+          },
+          {
+            "stop_id": "T006",
+            "address": "600 Industrial, Tampa",
+            "profit": 200.0,
+            "service_time": 20
+          },
+          {
+            "stop_id": "T007",
+            "address": "700 Gateway, Tampa",
+            "profit": 155.0,
+            "service_time": 13
+          },
+          {
+            "stop_id": "T005",
+            "address": "500 Commerce, Tampa",
+            "profit": 165.0,
+            "service_time": 16
+          },
+          {
+            "stop_id": "T003",
+            "address": "300 River Rd, Tampa",
+            "profit": 160.0,
+            "service_time": 14
+          }
+        ],
+        "total_profit": 1395.0,
+        "daily_cost": 150.0,
+        "net_profit": 1245.0
+      }
+    ],
+    "summary": {
+      "total_routes": 1,
+      "total_profit": 1395.0,
+      "total_cost": 150.0,
+      "net_profit": 1245.0,
+      "stops_serviced": 8,
+      "stops_missed": 0
+    }
+  }
+}
