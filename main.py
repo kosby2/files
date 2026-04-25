@@ -32,8 +32,8 @@ def main():
                         {
                             'stop_id': str(stop.stop_id),
                             'address': str(stop.address),
-                            'profit': float(stop.profit),
-                            'service_time': int(stop.service_time)
+                            'revenue': float(stop.revenue),
+                            'service_time_minutes': int(stop.service_time)
                         }
                         for stop in route.stops
                     ],

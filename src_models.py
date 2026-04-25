@@ -3,21 +3,10 @@
 from dataclasses import dataclass
 from typing import List, Dict, Optional
 
-@dataclass
-class Stop:
-    branch_id: str
-    stop_id: str
-    address: str
-    latitude: float
-    longitude: float
-    service_time_minutes: int
-    profit_per_stop: float
-    time_window_start: str
-    time_window_end: str
-    priority: str
+
 
 @dataclass
-class Vehicle:
+class Vehicle: #update
     branch_id: str
     vehicle_id: str
     truck_year: int
@@ -26,6 +15,7 @@ class Vehicle:
     capacity_units: int
     daily_cost: float
     est_failure_rate_pct: float
+    max_route_minutes: int = 480  # 8 hours
 
 @dataclass
 class Depot:
@@ -39,7 +29,7 @@ class Depot:
 class RouteStop:
     stop_id: str
     address: str
-    profit: float
+    revenue: float
     service_time: int
     time_window: str
     arrival_time: Optional[str] = None
@@ -67,16 +57,7 @@ class BranchSolution:
     stops_serviced: int
     stops_missed: int
 
-@dataclass
-class FailureSimulationResult:
-    branch_id: str
-    simulation_num: int
-    failed_vehicles: List[str]
-    routes: List[Route]
-    stops_serviced: int
-    stops_missed: List[str]
-    total_profit: float
-    success_rate: float
+
 
 @dataclass
 class BranchFailureAnalysis:

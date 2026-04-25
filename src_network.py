@@ -7,11 +7,10 @@ import json
 from typing import Dict, List
 from datetime import datetime
 from venv import logger
+from domain.stop import Stop
 
-from src_models import (
-    Stop, Vehicle, Depot, 
-    FailureSimulationResult, BranchFailureAnalysis
-)
+import src_models as src_models
+
 from src_branch_solver import BranchVRPSolver
 
 class LogisticsNetwork:
@@ -63,7 +62,7 @@ class LogisticsNetwork:
                 latitude=row['Latitude'],
                 longitude=row['Longitude'],
                 service_time_minutes=row['Service_Time_Minutes'],
-                profit_per_stop=row['Profit_Per_Stop'],
+                revenue_per_stop=row['Revenue_Per_Stop'],
                 time_window_start=row['Time_Window_Start'],
                 time_window_end=row['Time_Window_End'],
                 priority=row['Priority']
@@ -72,7 +71,7 @@ class LogisticsNetwork:
         ]
         
         vehicles = [
-            Vehicle(
+            src_models.Vehicle(
                 branch_id=row['Branch_ID'],
                 vehicle_id=row['Vehicle_ID'],
                 truck_year=row['Truck_Year'],
@@ -85,7 +84,7 @@ class LogisticsNetwork:
             for idx, row in branch_vehicles.iterrows()
         ]
         
-        depot = Depot(
+        depot = src_models.Depot(
             branch_id=branch_depot['Branch_ID'],
             depot_id=branch_depot['Depot_ID'],
             latitude=branch_depot['Latitude'],
@@ -159,7 +158,7 @@ class LogisticsNetwork:
                             f"    → {getattr(stop, 'stop_id', 'UNKNOWN')} "
                             f"{getattr(stop, 'address', '')} "
                             f"(${getattr(stop, 'profit', 0)}, "
-                            f"{getattr(stop, 'service_time', 0)}min)"
+                            f"{getattr(stop, 'service_time_minutes', 0)}min)"
                         )
 
                 print(f"    Net: ${getattr(route, 'net_profit', 0):.2f}")

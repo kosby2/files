@@ -7,6 +7,7 @@ from math import radians, sin, cos, sqrt, atan2
 from datetime import datetime
 import json
 import ortools
+import src_models as src_models
 
 
 try:
@@ -17,7 +18,9 @@ except ImportError:
     print("OR-Tools not fully installed")
     ORTOOLS_AVAILABLE = False
 
-from src_models import Stop, Vehicle, Depot, Route, RouteStop, BranchSolution
+from src_models import  Depot, Route, RouteStop, BranchSolution, Vehicle
+
+
 
 class BranchVRPSolver:
     """Solves VRP for a single branch"""
@@ -245,11 +248,11 @@ class BranchVRPSolver:
                         route_stops.append(RouteStop(
                             stop_id=stop['stop_id'],
                             address=stop['address'],
-                            profit=stop['profit_per_stop'],
+                            revenue=stop['revenue_per_stop'],
                             service_time=stop['service_time_minutes'],
                             time_window=f"{stop['time_window_start']} - {stop['time_window_end']}"
                         ))
-                        route_profit += stop['profit_per_stop']
+                        route_profit += stop['revenue_per_stop']
                         serviced_stops.add(stop['stop_id'])
                     except (IndexError, KeyError) as e:
                         logger.error(f"Error parsing stop at node {node_index}: {e}")
